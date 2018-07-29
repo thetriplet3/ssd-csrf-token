@@ -26,7 +26,8 @@ namespace csrf_token.Controllers
                 HttpContext.Session.SetString(Properties.Values.SESSION_KEY, HttpContext.Session.Id);
                 token.GenerateCSRFToken(HttpContext.Session.Id);
 
-                Response.Cookies.Append("CSRF-TOKEN", token.GetCSRFToken(HttpContext.Session.Id));
+                //This is for Assignment 2
+                //Response.Cookies.Append("CSRF-TOKEN", token.GetCSRFToken(HttpContext.Session.Id));
                 return RedirectToAction("Index", "Home");
             }
             else
