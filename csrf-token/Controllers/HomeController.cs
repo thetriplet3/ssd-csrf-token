@@ -11,12 +11,11 @@ namespace csrf_token.Controllers
 {
     public class HomeController : Controller
     {
-
-        const string sessionKey = "SID";
+        
 
         public IActionResult Index()
         {
-            string sessionValue = HttpContext.Session.GetString(sessionKey);
+            string sessionValue = HttpContext.Session.GetString(Properties.Values.SESSION_KEY);
             if (string.IsNullOrEmpty(sessionValue))
             {
                 return RedirectToAction("Index", "Login", new { area = "" });
