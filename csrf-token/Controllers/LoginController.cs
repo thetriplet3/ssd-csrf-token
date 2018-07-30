@@ -11,7 +11,7 @@ namespace csrf_token.Controllers
 {
     public class LoginController : Controller
     {
-        TokenHandler token;
+        private TokenHandler token;
         public IActionResult Index()
         {
             return View();
